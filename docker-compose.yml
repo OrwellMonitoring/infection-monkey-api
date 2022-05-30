@@ -10,7 +10,7 @@ services:
       - INFECTION_MONKEY_PASSWORD=$INFECTION_MONKEY_PASSWORD
       - INFECTION_MONKEY_CONFIG=$INFECTION_MONKEY_CONFIG
     ports:
-      - $API_PORT:8000
+      - $API_PORT:8080
 
   browser:
     image: selenium/standalone-chrome
