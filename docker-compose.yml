@@ -1,0 +1,16 @@
+services:
+  api:
+    build: ./app
+    env_file: ./.env
+    environment:
+      - INFECTION_MONKEY_URL=$INFECTION_MONKEY_URL
+      - INFECTION_MONKEY_USER=$INFECTION_MONKEY_USER
+      - INFECTION_MONKEY_PASSWORD=$INFECTION_MONKEY_PASSWORD
+      - INFECTION_MONKEY_CONFIG=$INFECTION_MONKEY_CONFIG
+    ports:
+      - $API_PORT:8000
+
+  browser:
+    image: selenium/standalone-chrome
+    ports:
+      - $BROWSER_PORT:4444
