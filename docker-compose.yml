@@ -1,6 +1,8 @@
 services:
   api:
-    build: ./app
+    build: 
+      context: ./app
+      network: host
     env_file: ./.env
     environment:
       - INFECTION_MONKEY_URL=$INFECTION_MONKEY_URL
